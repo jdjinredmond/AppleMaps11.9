@@ -1,9 +1,11 @@
 package com.omnia.applemaps119;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 //todo: everything
 
@@ -38,5 +40,11 @@ public class MainPage extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void toLogIn(View view)
+    {
+        Intent intent = new Intent(this, LoginActivityNoLWSD.class);
+        startActivity(intent);
     }
 }
