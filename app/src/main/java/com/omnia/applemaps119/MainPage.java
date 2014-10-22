@@ -44,7 +44,7 @@ public class MainPage extends Activity
 
     public void toLogIn(View view)
     {
-        Intent intent = new Intent(this, LoginActivityNoLWSD.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }
