@@ -29,6 +29,8 @@ import java.util.List;
 
 import com.unboundid.ldap.sdk.LDAPConnection;
 import com.unboundid.ldap.sdk.LDAPException;
+import com.unboundid.ldap.sdk.LDAPSearchException;
+import com.unboundid.ldap.sdk.SearchScope;
 
 
 /**
@@ -80,7 +82,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
         try
         {
-            lwsd = new LDAPConnection("lwsd.k12wa.org", 389);
+            lwsd = new LDAPConnection("168.99.194.10", 389);
         }
         catch (LDAPException e)
         {
@@ -277,10 +279,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
-            try {
-                lwsd.bind("UID=" + mUsername, mPassword);
-            } catch (LDAPException e) {
+            try
+            {
+                lwsd.bind("cn=" + mUsername + ",dc=lwsd,dc=k12wa,dc=org", mPassword);
+            }
+            catch (LDAPException e)
+            {
                 String error = e.getExceptionMessage();
+                try
+                {
+                    lwsd.connect("168.99.194.10", 389);
+                }
+                catch (LDAPException f)
+                {
+                    System.out.println(f);
+                }
                 return false;
             }
 
