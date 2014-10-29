@@ -82,7 +82,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
         try
         {
-            lwsd = new LDAPConnection("168.99.194.10", 389);
+            lwsd = new LDAPConnection("23.20.46.132", 389);
         }
         catch (LDAPException e)
         {
@@ -125,7 +125,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
         // Store values at the time of the login attempt.
         String username = mUsernameView.getText().toString();
+        username = "euler";
         String password = mPasswordView.getText().toString();
+        password = "password";
 
         boolean cancel = false;
         View focusView = null;
@@ -281,14 +283,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>{
 
             try
             {
-                lwsd.bind("cn=" + mUsername + ",dc=lwsd,dc=k12wa,dc=org", mPassword);
+                lwsd.bind("cn=read-only-admin,dc=example,dc=com", mPassword);
             }
             catch (LDAPException e)
             {
-                String error = e.getExceptionMessage();
+                String error = "hello";
                 try
                 {
-                    lwsd.connect("168.99.194.10", 389);
+                    lwsd.connect("23.20.46.132", 389);
                 }
                 catch (LDAPException f)
                 {
