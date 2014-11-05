@@ -1,47 +1,68 @@
 package com.omnia.applemaps119;
 
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.widget.DrawerLayout;
 
-//todo: everything
 
-public class BaseActivity extends ActionBarActivity
+public class BaseActivity extends Activity
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
+
+    /**
+     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
+     */
+    private NavigationDrawerFragment mNavigationDrawerFragment;
+
+    /*
+     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
+     */
+    private CharSequence mTitle = "oops";
+
+    public void restoreActionBar()
+    {
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(mTitle);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_base);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
-    }
+        //findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
 
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(
+                R.id.navigation_drawer);
+        //mTitle = getTitle();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_page, menu);
-        return true;
+        // Set up the drawer.
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
+                (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    public void onNavigationDrawerItemSelected(int position)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings)
+        FragmentManager fragmentManager = getFragmentManager();
+        Fragment fragment = new Fragment();
+        switch (position)
         {
-            return true;
+            case 0:
+                mTitle = getString(R.string.title_home);
+                fragment = new HomeFragment();
+                break;
+            case 1:
+                mTitle = getString(R.string.title_calendar);
+                fragment = new CalendarFragment();
+                break;
         }
-        return super.onOptionsItemSelected(item);
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(mTitle);
     }
-
 }
