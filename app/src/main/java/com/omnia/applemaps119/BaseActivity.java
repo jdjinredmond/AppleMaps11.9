@@ -1,6 +1,5 @@
 package com.omnia.applemaps119;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
