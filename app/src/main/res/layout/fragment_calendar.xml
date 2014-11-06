@@ -5,11 +5,10 @@
     android:layout_height = "match_parent"
     android:orientation = "vertical">
 
-    <!--<android.support.v7.widget.Toolbar
-        android:id = "@+id/base_toolbar"
-        android:layout_width = "match_parent"
-        android:layout_height = "@dimen/abc_action_bar_default_height_material"
-        android:title = "@string/title_calendar" />-->
+    <android.support.v7.widget.Toolbar
+        android:id = "@+id/toolbar_calendar"
+        style = "@style/AppTheme.Toolbar"
+        android:title = "@string/title_calendar" />
 
     <RelativeLayout
         android:layout_width = "match_parent"

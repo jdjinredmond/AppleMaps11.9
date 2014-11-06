@@ -13,11 +13,20 @@
     </style>
 
     <style name = "AppTheme.Button" parent = "TextAppearance.AppCompat.Button">
-        <item name = "android:fontFamily"></item>
         <item name = "android:textAllCaps">true</item>
         <item name = "android:layout_height">32dp</item>
         <item name = "android:minWidth">@dimen/abc_action_button_min_width_material</item>
         <item name = "android:textSize">@dimen/abc_text_size_button_material</item>
+    </style>
+
+    <style name = "AppTheme.NavigationDrawer.Text" parent="AppTheme">
+        <item name = "android:fontFamily">sans-serif</item>
+        <item name = "android:textStyle">bold</item>
+        <item name = "android:textSize">14sp</item>
+        <item name = "android:textColor">#de000000</item>
+        <item name = "android:layout_height">48dp</item>
+        <item name = "android:color">@android:color/transparent</item>
+        <item name = "android:layout_marginLeft">72dp</item>
     </style>
 
 </resources>

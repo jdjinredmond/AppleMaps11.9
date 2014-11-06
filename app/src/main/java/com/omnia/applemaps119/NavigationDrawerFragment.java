@@ -89,8 +89,8 @@ public class NavigationDrawerFragment extends Fragment
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1, android.R.id.text1,
+        mDrawerListView.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),
+                R.layout.navigation_drawer_item, R.id.navigation_drawer_text,
                 getResources().getStringArray(R.array.navigation_drawer_items)));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, mFromSavedInstanceState);
         return mDrawerListView;
@@ -112,20 +112,9 @@ public class NavigationDrawerFragment extends Fragment
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
 
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
-
-        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, getToolbar(),
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         {
-            @Override
-            public void onDrawerClosed(View drawerView)
-            {
-                super.onDrawerClosed(drawerView);
-                ((BaseActivity) getActivity()).restoreActionBar();
-            }
-
             @Override
             public void onDrawerOpened(View drawerView)
             {
@@ -142,9 +131,6 @@ public class NavigationDrawerFragment extends Fragment
                             getActivity());
                     sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
                 }
-
-                ActionBar actionBar = getActionBar();
-                actionBar.setTitle(R.string.app_name);
             }
         };
 
@@ -156,14 +142,14 @@ public class NavigationDrawerFragment extends Fragment
         }
 
         // Defer code dependent on restoration of previous instance state.
-        mDrawerLayout.post(new Runnable()
+        /*mDrawerLayout.post(new Runnable()
         {
             @Override
             public void run()
             {
                 mDrawerToggle.syncState();
             }
-        });
+        });*/
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
@@ -217,17 +203,6 @@ public class NavigationDrawerFragment extends Fragment
     {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
-    }
-
-    private ActionBar getActionBar()
-    {
-        //return ((ActionBarActivity) getActivity()).getSupportActionBar();
-        return getActivity().getActionBar();
-    }
-
-    public Toolbar getToolbar()
-    {
-        return new Toolbar(getActivity());
     }
 
     public static interface NavigationDrawerCallbacks

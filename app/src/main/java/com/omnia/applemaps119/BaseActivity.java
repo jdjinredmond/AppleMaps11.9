@@ -12,21 +12,12 @@ public class BaseActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
 
+    private int toolbarId = 0;
+
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /*
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
-    private CharSequence mTitle = "oops";
-
-    public void restoreActionBar()
-    {
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(mTitle);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,7 +29,6 @@ public class BaseActivity extends Activity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(
                 R.id.navigation_drawer);
-        //mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
@@ -53,16 +43,14 @@ public class BaseActivity extends Activity
         switch (position)
         {
             case 0:
-                mTitle = getString(R.string.title_home);
                 fragment = new HomeFragment();
+                toolbarId = R.id.toolbar_home;
                 break;
             case 1:
-                mTitle = getString(R.string.title_calendar);
                 fragment = new CalendarFragment();
+                toolbarId = R.id.toolbar_calendar;
                 break;
         }
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(mTitle);
     }
 }
