@@ -11,7 +11,7 @@ public class BaseActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
 
-    private int toolbarId = 0;
+    private int mToolbarId = 0;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -43,11 +43,11 @@ public class BaseActivity extends Activity
         {
             case 0:
                 fragment = new HomeFragment();
-                toolbarId = R.id.toolbar_home;
+                mToolbarId = R.id.toolbar_home;
                 break;
             case 1:
                 fragment = new CalendarFragment();
-                toolbarId = R.id.toolbar_calendar;
+                mToolbarId = R.id.toolbar_calendar;
                 break;
         }
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();

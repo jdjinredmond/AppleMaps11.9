@@ -10,7 +10,8 @@
 
     <style name = "AppTheme.Toolbar.Title" parent="AppTheme.Toolbar">
         <item name = "android:textColor">#ffffffff</item>
-        <item name = "android:background">#0fff</item>
+        <item name = "android:background">@color/colorPrimary</item>
+        <!--<item name = "android:colorBackground">@color/colorPrimary</item>-->
     </style>
 
     <style name = "AppTheme.Text" parent="AppTheme">
@@ -28,10 +29,10 @@
         <item name = "android:fontFamily">sans-serif</item>
         <item name = "android:textStyle">bold</item>
         <item name = "android:textSize">14sp</item>
-        <item name = "android:textColor">#de000000</item>
+        <item name = "android:textColor">@color/navigation_drawer_text</item>
         <item name = "android:layout_height">48dp</item>
-        <item name = "android:color">@android:color/transparent</item>
-        <item name = "android:layout_marginLeft">72dp</item>
+        <item name = "android:background">@android:color/transparent</item>
+        <item name = "android:paddingLeft">72dp</item>
     </style>
 
 </resources>
