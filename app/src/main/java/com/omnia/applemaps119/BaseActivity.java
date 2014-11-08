@@ -5,9 +5,10 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 
 
-public class BaseActivity extends Activity
+public class BaseActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
 
@@ -38,7 +39,7 @@ public class BaseActivity extends Activity
     public void onNavigationDrawerItemSelected(int position)
     {
         FragmentManager fragmentManager = getFragmentManager();
-        Fragment fragment = new Fragment();
+        ActionBarFragment fragment = new ActionBarFragment();
         switch (position)
         {
             case 0:
