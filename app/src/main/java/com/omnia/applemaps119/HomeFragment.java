@@ -17,7 +17,7 @@ public class HomeFragment extends Fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         mToolbar.setTitle(R.string.title_home);
-        mToolbar.setTitleTextAppearance(view.getContext(), R.style.AppTheme_Toolbar_Title);
+        mToolbar.setTitleTextAppearance(mToolbar.getContext(), R.style.AppTheme_Toolbar_Title);
         return view;
     }
 }

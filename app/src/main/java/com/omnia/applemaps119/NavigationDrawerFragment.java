@@ -90,7 +90,7 @@ public class NavigationDrawerFragment extends Fragment
         mDrawerListView.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),
                 R.layout.navigation_drawer_item, R.id.navigation_drawer_text,
                 getResources().getStringArray(R.array.navigation_drawer_items)));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, mFromSavedInstanceState);
+        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
 

@@ -1,0 +1,9 @@
+Activities
+•	Login
+•	Home
+•	Calendar
+•	Classes
+•	Planner
+•	Discussion forum (maybe)
+•	Grades
+•	Settings
