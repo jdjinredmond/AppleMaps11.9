@@ -24,14 +24,14 @@ public class BaseActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        //findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
-
         mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(
                 R.id.navigation_drawer);
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
     }
 
     @Override
