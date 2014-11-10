@@ -14,7 +14,7 @@ public class HomeFragment extends ActionBarFragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         mToolbar.setTitle(R.string.title_home);
-        mToolbar.setTitleTextAppearance(mToolbar.getContext(), R.style.AppTheme_Toolbar_Title);
+        super.onCreateView(inflater, container, savedInstanceState);
         return view;
     }
 }

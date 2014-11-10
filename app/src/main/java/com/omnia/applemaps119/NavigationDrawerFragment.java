@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,12 +106,12 @@ public class NavigationDrawerFragment extends Fragment
      * @param fragmentId   The android:id of this fragment in its activity's layout.
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
-    public void setUp(int fragmentId, DrawerLayout drawerLayout)
+    public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar)
     {
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
 
-        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout,
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         {
             @Override
@@ -149,6 +150,32 @@ public class NavigationDrawerFragment extends Fragment
             }
         });*/
 
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
+
+    public void setDrawerToggle(Toolbar toolbar)
+    {
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        {
+            @Override
+            public void onDrawerOpened(View drawerView)
+            {
+                super.onDrawerOpened(drawerView);
+                if (!isAdded())
+                {
+                    return;
+                }
+
+                if (!mUserLearnedDrawer)
+                {
+                    mUserLearnedDrawer = true;
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(
+                            getActivity());
+                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
+                }
+            }
+        };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 

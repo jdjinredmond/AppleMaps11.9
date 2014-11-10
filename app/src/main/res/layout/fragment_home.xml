@@ -22,6 +22,7 @@
             android:layout_alignParentTop = "true"
             android:layout_marginLeft = "69dp"
             android:layout_marginTop = "48dp"
+            android:id="@+id/text_home"
             android:text = "@string/hello_world" />
 
     </RelativeLayout>

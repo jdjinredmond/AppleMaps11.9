@@ -1,7 +1,5 @@
 package com.omnia.applemaps119;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +11,7 @@ public class BaseActivity extends ActionBarActivity
 {
 
     private int mToolbarId = 0;
+    ActionBarFragment mFragment = new ActionBarFragment();
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -30,7 +29,7 @@ public class BaseActivity extends ActionBarActivity
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                (DrawerLayout) findViewById(R.id.drawer_layout), mFragment.getToolbar());
 
         findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
     }
@@ -39,18 +38,21 @@ public class BaseActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position)
     {
         FragmentManager fragmentManager = getFragmentManager();
-        ActionBarFragment fragment = new ActionBarFragment();
         switch (position)
         {
             case 0:
-                fragment = new HomeFragment();
+                mFragment = new HomeFragment();
                 mToolbarId = R.id.toolbar_home;
                 break;
             case 1:
-                fragment = new CalendarFragment();
+                mFragment = new CalendarFragment();
                 mToolbarId = R.id.toolbar_calendar;
                 break;
         }
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, mFragment).commit();
+        if (mNavigationDrawerFragment != null)
+        {
+            mNavigationDrawerFragment.setDrawerToggle(mFragment.getToolbar());
+        }
     }
 }
