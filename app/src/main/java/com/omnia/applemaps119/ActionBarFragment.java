@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 public class ActionBarFragment extends Fragment
 {
     Toolbar mToolbar;
+    NavigationDrawerFragment mNavigationDrawerFragment;
 
     @Override
     @Nullable
@@ -19,6 +20,7 @@ public class ActionBarFragment extends Fragment
         mToolbar.setTitleTextAppearance(mToolbar.getContext(), R.style.AppTheme_Toolbar_Title);
         mToolbar.getChildAt(0).getBackground().setAlpha(0);
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
+        mNavigationDrawerFragment.setDrawerToggle(getToolbar());
         return null;
     }
 
@@ -26,5 +28,10 @@ public class ActionBarFragment extends Fragment
     public Toolbar getToolbar()
     {
         return mToolbar;
+    }
+
+    public void setNavigationDrawerFragment(NavigationDrawerFragment navigationDrawerFragment)
+    {
+        mNavigationDrawerFragment = navigationDrawerFragment;
     }
 }

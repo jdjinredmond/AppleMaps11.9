@@ -29,7 +29,7 @@ public class BaseActivity extends ActionBarActivity
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout), mFragment.getToolbar());
+                (DrawerLayout) findViewById(R.id.drawer_layout)/*, mFragment.getToolbar()*/);
 
         findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
     }
@@ -49,10 +49,7 @@ public class BaseActivity extends ActionBarActivity
                 mToolbarId = R.id.toolbar_calendar;
                 break;
         }
+        mFragment.setNavigationDrawerFragment(mNavigationDrawerFragment);
         fragmentManager.beginTransaction().replace(R.id.container, mFragment).commit();
-        if (mNavigationDrawerFragment != null)
-        {
-            mNavigationDrawerFragment.setDrawerToggle(mFragment.getToolbar());
-        }
     }
 }

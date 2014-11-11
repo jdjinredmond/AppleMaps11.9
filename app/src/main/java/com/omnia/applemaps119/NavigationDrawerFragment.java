@@ -69,9 +69,6 @@ public class NavigationDrawerFragment extends Fragment
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
-
-        // Select either the default item (0) or the last selected item.
-        selectItem(mCurrentSelectedPosition);
     }
 
     @Override
@@ -106,32 +103,10 @@ public class NavigationDrawerFragment extends Fragment
      * @param fragmentId   The android:id of this fragment in its activity's layout.
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
-    public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar)
+    public void setUp(int fragmentId, DrawerLayout drawerLayout/*, Toolbar toolbar*/)
     {
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
-
-        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        {
-            @Override
-            public void onDrawerOpened(View drawerView)
-            {
-                super.onDrawerOpened(drawerView);
-                if (!isAdded())
-                {
-                    return;
-                }
-
-                if (!mUserLearnedDrawer)
-                {
-                    mUserLearnedDrawer = true;
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(
-                            getActivity());
-                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
-                }
-            }
-        };
 
         // If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
         // per the navigation drawer design guidelines.
@@ -150,7 +125,7 @@ public class NavigationDrawerFragment extends Fragment
             }
         });*/
 
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        selectItem(mCurrentSelectedPosition);
     }
 
     public void setDrawerToggle(Toolbar toolbar)
