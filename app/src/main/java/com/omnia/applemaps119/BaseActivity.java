@@ -1,7 +1,10 @@
 package com.omnia.applemaps119;
 
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 
@@ -9,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 public class BaseActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
+    private static final String STATE_LOGGED_IN = "logged_in";
 
     private int mToolbarId = 0;
     ActionBarFragment mFragment = new ActionBarFragment();
@@ -21,6 +25,10 @@ public class BaseActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(STATE_LOGGED_IN, false))
+        {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
@@ -47,6 +55,10 @@ public class BaseActivity extends ActionBarActivity
             case 1:
                 mFragment = new CalendarFragment();
                 mToolbarId = R.id.toolbar_calendar;
+                break;
+            case 2:
+                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, false).apply();
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
         mFragment.setNavigationDrawerFragment(mNavigationDrawerFragment);

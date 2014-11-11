@@ -2,6 +2,7 @@
     <string name = "app_name">Apple Maps 11.9</string>
     <string name = "title_home">Home</string>
     <string name = "title_calendar">Calendar</string>
+    <string name = "title_logout">Log out</string>
     <string name = "hello_world">Hello World!</string>
     <string name = "calendar">Calendar</string>
     <string name = "navigation_drawer_open">Open navigation drawer</string>
@@ -10,5 +11,6 @@
     <string-array name = "navigation_drawer_items">
         <item>@string/title_home</item>
         <item>@string/title_calendar</item>
+        <item>@string/title_logout</item>
     </string-array>
 </resources>
