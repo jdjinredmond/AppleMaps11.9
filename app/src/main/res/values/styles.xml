@@ -11,8 +11,6 @@
 
     <style name = "AppTheme.Toolbar.Title" parent="AppTheme.Toolbar">
         <item name = "android:textColor">#ffffffff</item>
-        <!--<item name = "android:background">@color/transparent</item>-->
-        <!--<item name = "android:colorBackground">@color/colorPrimary</item>-->
     </style>
 
     <style name = "AppTheme.Text" parent="AppTheme">
