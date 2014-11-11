@@ -26,7 +26,7 @@
     <color name = "material_blue_grey_700">#455a64</color>
     <color name = "material_text_primary">#de000000</color>
     <color name = "transparent">#0000</color>
-    <color name = "material_grey_nav_selected">#ffe8e8e8</color>
+    <color name = "material_grey_nav_checked">#ffe8e8e8</color>
 
     <color name = "colorPrimary">@color/material_indigo_500</color>
     <color name = "colorPrimaryDark">@color/material_indigo_700</color>
