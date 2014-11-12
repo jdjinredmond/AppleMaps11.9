@@ -32,6 +32,8 @@ public class NavigationDrawerFragment extends Fragment
      */
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
 
+    private static final int POSITION_LOGOUT = 3;
+
     /**
      * A pointer to the current callbacks instance (the Activity).
      */
@@ -66,7 +68,11 @@ public class NavigationDrawerFragment extends Fragment
 
         if (savedInstanceState != null)
         {
-            mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+            int selectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+            if (selectedPosition != POSITION_LOGOUT)
+            {
+                mCurrentSelectedPosition = selectedPosition;
+            }
             mFromSavedInstanceState = true;
         }
     }
@@ -131,6 +137,32 @@ public class NavigationDrawerFragment extends Fragment
     public void setDrawerToggle(Toolbar toolbar)
     {
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        {
+            @Override
+            public void onDrawerOpened(View drawerView)
+            {
+                super.onDrawerOpened(drawerView);
+                if (!isAdded())
+                {
+                    return;
+                }
+
+                if (!mUserLearnedDrawer)
+                {
+                    mUserLearnedDrawer = true;
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(
+                            getActivity());
+                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
+                }
+            }
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
+
+    public void setDrawerToggle()
+    {
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         {
             @Override

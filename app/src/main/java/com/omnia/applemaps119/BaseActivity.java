@@ -57,6 +57,10 @@ public class BaseActivity extends ActionBarActivity
                 mToolbarId = R.id.toolbar_calendar;
                 break;
             case 2:
+                mFragment = new ClassesFragment();
+                mToolbarId = R.id.toolbar_classes;
+                break;
+            case 3:
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, false).apply();
                 startActivity(new Intent(this, LoginActivity.class));
                 break;

@@ -3,7 +3,7 @@
 
     <style name = "RobotoMedium">
         <item name = "android:fontFamily">sans-serif</item>
-        <item name = "android:textStyle">bold</item>
+        <item name = "android:textStyle">normal</item>
     </style>
 
 </resources>
