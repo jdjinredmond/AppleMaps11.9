@@ -17,12 +17,12 @@ public class ClassesFragment extends ActionBarFragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_classes, container, false);
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container_classes,
+                new ClassesListFragment()).commit();
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_classes);
         mToolbar.setTitle(R.string.title_classes);
         super.onCreateView(inflater, container, savedInstanceState);
-        /*FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container,
-                new ClassesListFragment()).commit();*/
         return view;
     }
 
