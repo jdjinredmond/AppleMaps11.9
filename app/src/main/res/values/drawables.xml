@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name = "navigation_drawer_icons">
+        <item>@drawable/common_signin_btn_icon_dark</item>
+        <item>@drawable/ic_menu</item>
+    </array>
+</resources>

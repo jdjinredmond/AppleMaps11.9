@@ -25,6 +25,8 @@
     <color name = "material_blue_grey_500">#607d8b</color>
     <color name = "material_blue_grey_700">#455a64</color>
     <color name = "material_text_primary">#de000000</color>
+    <color name = "material_icon">#8a000000</color>
+    <color name = "material_background">#fffafafa</color>
     <color name = "transparent">#0000</color>
     <color name = "material_grey_nav_checked">#ffe8e8e8</color>
 

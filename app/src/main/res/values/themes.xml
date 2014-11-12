@@ -5,9 +5,9 @@
         <item name = "colorPrimary">@color/colorPrimary</item>
         <item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name = "colorAccent">@color/colorAccent</item>
-        <item name = "android:background">@color/background_material_light</item>
+        <item name = "android:background">@color/material_background</item>
         <item name = "android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name = "android:backgroundTint">@color/background_material_light</item>
+        <item name = "android:backgroundTint">@color/material_background</item>
     </style>
 
 </resources>
