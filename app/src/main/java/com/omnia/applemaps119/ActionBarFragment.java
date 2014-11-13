@@ -21,7 +21,10 @@ public class ActionBarFragment extends Fragment
         mToolbar.setContentInsetsAbsolute((int) getActivity().getApplicationContext().getResources().getDisplayMetrics().density * 72, 3);
         mToolbar.getChildAt(0).getBackground().setAlpha(0);
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
-        mNavigationDrawerFragment.setDrawerToggle(getToolbar());
+        if (mNavigationDrawerFragment != null)
+        {
+            mNavigationDrawerFragment.setDrawerToggle(getToolbar());
+        }
         return null;
     }
 
