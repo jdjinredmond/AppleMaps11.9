@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class HomeFragment extends ActionBarFragment
 {
@@ -15,6 +16,9 @@ public class HomeFragment extends ActionBarFragment
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         mToolbar.setTitle(R.string.title_home);
         super.onCreateView(inflater, container, savedInstanceState);
+        String date = "Wednesday, November 12";
+        TextView dateText = (TextView) view.findViewById(R.id.text_home);
+        dateText.setText(date);
         return view;
     }
 }
