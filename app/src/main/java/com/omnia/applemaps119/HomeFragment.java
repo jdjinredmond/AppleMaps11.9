@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class HomeFragment extends ActionBarFragment
 {
     @Override
@@ -16,7 +19,9 @@ public class HomeFragment extends ActionBarFragment
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         mToolbar.setTitle(R.string.title_home);
         super.onCreateView(inflater, container, savedInstanceState);
-        String date = "Wednesday, November 12";
+        Date nDate = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("EEEE,\nMMMM dd");
+        String date = ft.format(nDate);
         TextView dateText = (TextView) view.findViewById(R.id.text_home);
         dateText.setText(date);
         return view;
