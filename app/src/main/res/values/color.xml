@@ -30,6 +30,8 @@
     <color name = "transparent">#0000</color>
     <color name = "material_grey_nav_checked">#ffe8e8e8</color>
 
+    <color name = "material_divider">#e1e1e1</color>
+
     <color name = "colorPrimary">@color/material_indigo_500</color>
     <color name = "colorPrimaryDark">@color/material_indigo_700</color>
     <color name = "colorAccent">@color/material_light_green_A200</color>
