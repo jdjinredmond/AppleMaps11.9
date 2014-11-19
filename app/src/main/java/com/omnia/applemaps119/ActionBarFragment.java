@@ -23,7 +23,7 @@ public class ActionBarFragment extends Fragment
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
         if (mNavigationDrawerFragment != null)
         {
-            mNavigationDrawerFragment.setDrawerToggle(getToolbar());
+            mNavigationDrawerFragment.setDrawerToggle(mToolbar);
         }
         return null;
     }

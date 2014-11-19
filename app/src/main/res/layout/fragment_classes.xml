@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
     android:layout_width = "match_parent"
     android:layout_height = "match_parent"
     android:orientation = "vertical">
@@ -10,9 +11,28 @@
         style = "@style/AppTheme.Toolbar"
         android:title = "@string/title_classes" />
 
-    <FrameLayout
-        android:id = "@+id/container_classes"
+    <ViewSwitcher
+        android:id = "@+id/fragment_classes_switcher"
         android:layout_width = "match_parent"
-        android:layout_height = "match_parent" />
+        android:layout_height = "match_parent">
+
+        <ListView
+            android:id = "@+id/classes_list"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:background = "@color/transparent"
+            android:choiceMode = "none"
+            android:divider = "@color/transparent"
+            android:dividerHeight = "0dp"
+            android:paddingBottom = "8dp"
+            android:paddingTop = "8dp"
+            tools:context = ".ClassesFragment" />
+
+        <FrameLayout
+            android:id = "@+id/container_classes"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent" />
+
+    </ViewSwitcher>
 
 </LinearLayout>
