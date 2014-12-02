@@ -20,11 +20,30 @@ public class HomeFragment extends ActionBarFragment
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         mToolbar.setTitle(R.string.title_home);
         super.onCreateView(inflater, container, savedInstanceState);
-        Date nDate = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("EEEE,\nMMMM dd");
+        /*Date nDate = new Date();
+        String format;
+        //format = "EEEE,\nMMMM dd";
+        format = "dd\nEEEE";
+        SimpleDateFormat ft = new SimpleDateFormat(format);
         String date = ft.format(nDate);
         TextView dateText = (TextView) view.findViewById(R.id.text_home);
-        dateText.setText(date);
+        dateText.setText(date);*/
+        setDate(view);
         return view;
+    }
+
+    private void setDate(View view)
+    {
+        Date nDate = new Date();
+        String formatDay = "MMMM, EEEE";
+        String formatDate = "d";
+        SimpleDateFormat ftDay = new SimpleDateFormat(formatDay);
+        SimpleDateFormat ftDate = new SimpleDateFormat(formatDate);
+        String day = ftDay.format(nDate);
+        String date = ftDate.format(nDate);
+        TextView dayText = (TextView) view.findViewById(R.id.text_day);
+        TextView dateText = (TextView) view.findViewById(R.id.text_date);
+        dayText.setText(day);
+        dateText.setText(date);
     }
 }

@@ -18,7 +18,7 @@ public class ActionBarFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         mToolbar.setTitleTextAppearance(mToolbar.getContext(), R.style.AppTheme_Toolbar_Title);
-        mToolbar.setContentInsetsAbsolute((int) getActivity().getApplicationContext().getResources().getDisplayMetrics().density * 72, 3);
+        mToolbar.setContentInsetsAbsolute((int) (getActivity().getApplicationContext().getResources().getDisplayMetrics().density * 72), 0);
         mToolbar.getChildAt(0).getBackground().setAlpha(0);
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
         if (mNavigationDrawerFragment != null)
