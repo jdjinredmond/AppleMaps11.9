@@ -15,41 +15,51 @@
         android:layout_height = "match_parent">
 
         <TextView
+            android:id = "@+id/text_day"
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentLeft = "true"
             android:layout_alignParentTop = "true"
-            android:maxLines="2"
-            android:minLines="2"
+            android:layout_marginBottom = "0dp"
+            android:layout_marginLeft = "72dp"
             android:layout_marginTop = "16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="34sp"
-            android:id="@+id/text_home"
-            android:text = "@string/date"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/material_divider"
-            android:layout_above="@+id/text_announcements"/>
+            android:text = "@string/date"
+            android:textSize = "14sp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:id="@+id/text_announcements"
-            android:text = "@string/announcements"
-            android:textSize="16sp"
-            android:textAlignment="gravity"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@+id/text_home"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:gravity="center_vertical" />
+            android:id = "@+id/text_date"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_below = "@+id/text_day"
+            android:layout_marginLeft = "72dp"
+            android:fontFamily = "sans-serif-light"
+            android:textColor = "@color/colorAccentDarker"
+            android:textSize = "112sp" />
+
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/material_divider"
-            android:layout_below="@+id/text_announcements"/>
+            android:layout_width = "match_parent"
+            android:layout_height = "1dp"
+            android:layout_above = "@+id/text_announcements"
+            android:background = "@color/material_divider" />
+
+        <TextView
+            android:id = "@+id/text_announcements"
+            android:layout_width = "match_parent"
+            android:layout_height = "48dp"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_below = "@+id/text_date"
+            android:layout_marginLeft = "16dp"
+            android:gravity = "center_vertical"
+            android:text = "@string/announcements"
+            android:textAlignment = "gravity"
+            android:textSize = "16sp" />
+
+        <View
+            android:layout_width = "match_parent"
+            android:layout_height = "1dp"
+            android:layout_below = "@+id/text_announcements"
+            android:background = "@color/material_divider" />
 
     </RelativeLayout>
 </LinearLayout>
