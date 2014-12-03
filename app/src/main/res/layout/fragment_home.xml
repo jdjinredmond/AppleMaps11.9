@@ -27,10 +27,8 @@
             android:textSize = "56sp" />
 
         <View
-            android:layout_width = "match_parent"
-            android:layout_height = "1dp"
             android:layout_above = "@+id/text_announcements"
-            android:background = "@color/material_divider" />
+            style = "@style/AppTheme.Divider" />
 
         <TextView
             android:id = "@+id/text_announcements"
@@ -46,82 +44,75 @@
             android:textSize = "16sp" />
 
         <TextView
-            android:id="@+id/text_announcement1"
-            android:layout_width="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="72dp"
-            android:layout_below="@+id/text_announcements"
-            android:gravity="center_vertical"
-            android:text="@string/announcement1"
-            android:textSize="14dp"
-            android:layout_height="56dp" />
-        <TextView
-            android:id="@+id/text_announcement2"
-            android:layout_width="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="72dp"
-            android:layout_marginBottom="2dp"
-            android:layout_below="@+id/text_announcement1"
-            android:gravity="center_vertical"
-            android:text="@string/announcement2"
-            android:textSize="14dp"
-            android:layout_height="56dp" />
-        <TextView
-            android:id="@+id/text_announcement3"
-            android:layout_width="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="72dp"
-            android:layout_marginBottom="2dp"
-            android:layout_below="@+id/text_announcement2"
-            android:gravity="center_vertical"
-            android:text="@string/announcement3"
-            android:textSize="14dp"
-            android:layout_height="56dp" />
-        <TextView
-            android:id="@+id/text_announcement4"
-            android:layout_width="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="72dp"
-            android:layout_marginBottom="2dp"
-            android:layout_below="@+id/text_announcement3"
-            android:gravity="center_vertical"
-            android:text="@string/announcement4"
-            android:textSize="14dp"
-            android:layout_height="56dp" />
-
-        <View
+            android:id = "@+id/text_announcement1"
             android:layout_width = "match_parent"
-            android:layout_height = "1dp"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_marginLeft = "72dp"
+            android:layout_below = "@+id/text_announcements"
+            android:gravity = "center_vertical"
+            android:text = "@string/announcement1"
+            android:textSize = "14dp"
+            android:layout_height = "56dp" />
+
+        <TextView
+            android:id = "@+id/text_announcement2"
+            android:layout_width = "match_parent"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_marginLeft = "72dp"
+            android:layout_marginBottom = "2dp"
+            android:layout_below = "@+id/text_announcement1"
+            android:gravity = "center_vertical"
+            android:text = "@string/announcement2"
+            android:textSize = "14dp"
+            android:layout_height = "56dp" />
+
+        <TextView
+            android:id = "@+id/text_announcement3"
+            android:layout_width = "match_parent"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_marginLeft = "72dp"
+            android:layout_marginBottom = "2dp"
+            android:layout_below = "@+id/text_announcement2"
+            android:gravity = "center_vertical"
+            android:text = "@string/announcement3"
+            android:textSize = "14dp"
+            android:layout_height = "56dp" />
+
+        <TextView
+            android:id = "@+id/text_announcement4"
+            android:layout_width = "match_parent"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_marginLeft = "72dp"
+            android:layout_marginBottom = "2dp"
+            android:layout_below = "@+id/text_announcement3"
+            android:gravity = "center_vertical"
+            android:text = "@string/announcement4"
+            android:textSize = "14dp"
+            android:layout_height = "56dp" />
+
+        <!--<View
+
             android:layout_below = "@+id/text_announcement4"
-            android:background = "@color/material_divider" />
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="2dp"
-            android:background="@drawable/ic_bookmark_black"
-            android:layout_below="@+id/text_announcements"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="2dp"
-            android:background="@drawable/ic_bookmark_black"
-            android:layout_below="@+id/text_announcement1"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="2dp"
-            android:background="@drawable/ic_bookmark_black"
-            android:layout_below="@+id/text_announcement2"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="2dp"
-            android:background="@drawable/ic_bookmark_black"
-            android:layout_below="@+id/text_announcement3"/>
+            style="@style/AppTheme.Divider" />-->
+        <ImageView
+            style = "@style/AppTheme.Icon.Black.54.Bookmark.Home"
+            android:layout_below = "@+id/text_announcements" />
+
+        <ImageView
+            style = "@style/AppTheme.Icon.Black.54.Bookmark.Home"
+            android:layout_below = "@+id/text_announcement1" />
+
+        <ImageView
+            style = "@style/AppTheme.Icon.Black.54.Bookmark.Home"
+            android:layout_below = "@+id/text_announcement2" />
+
+        <ImageView
+            style = "@style/AppTheme.Icon.Black.54.Bookmark.Home"
+            android:layout_below = "@+id/text_announcement3" />
 
 
     </RelativeLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+
 import java.util.*;
 import java.text.*;
 
@@ -27,7 +28,8 @@ public class BaseActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        if (!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(STATE_LOGGED_IN, false))
+        if (!PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(
+                STATE_LOGGED_IN, false))
         {
             startActivity(new Intent(this, LoginActivity.class));
         }
@@ -41,7 +43,8 @@ public class BaseActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout)/*, mFragment.getToolbar()*/);
 
-        findViewById(R.id.navigation_drawer).setMinimumWidth(getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
+        findViewById(R.id.navigation_drawer).setMinimumWidth(
+                getResources().getConfiguration().screenWidthDp - R.dimen.abc_action_bar_default_height_material);
     }
 
     @Override
@@ -63,7 +66,8 @@ public class BaseActivity extends ActionBarActivity
                 mToolbarId = R.id.toolbar_classes;
                 break;
             case 3:
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, false).apply();
+                PreferenceManager.getDefaultSharedPreferences(
+                        getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, false).apply();
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
         }

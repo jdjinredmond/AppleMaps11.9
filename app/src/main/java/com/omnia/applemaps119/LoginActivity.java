@@ -347,7 +347,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>
 
             if (success)
             {
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, true).apply();
+                PreferenceManager.getDefaultSharedPreferences(
+                        getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, true).apply();
                 finish();
             }
             else

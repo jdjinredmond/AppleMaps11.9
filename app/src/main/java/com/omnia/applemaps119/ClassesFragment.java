@@ -42,7 +42,8 @@ public class ClassesFragment extends ActionBarFragment
                 Bundle args = new Bundle();
                 args.putString("class", classes[position]);
                 classFragment.setArguments(args);
-                fragmentManager.beginTransaction().replace(R.id.container_classes, classFragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.container_classes,
+                        classFragment).commit();
                 mViewSwitcher.showNext();
                 mToolbar.setTitle(/*mViewSwitcher.getChildCount() + ""*/classes[position]);
                 mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -70,7 +71,8 @@ public class ClassesFragment extends ActionBarFragment
     public static class ClassFragment extends Fragment
     {
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState)
         {
             View view = inflater.inflate(R.layout.fragment_classes_class, container, false);
             TextView textView = (TextView) view.findViewById(R.id.class_title);

@@ -3,6 +3,7 @@
               android:orientation = "vertical"
               android:layout_width = "match_parent"
               android:layout_height = "match_parent">
+
     <RelativeLayout
         android:layout_width = "match_parent"
         android:layout_height = "match_parent">
@@ -10,81 +11,83 @@
         <TextView
             android:layout_width = "wrap_content"
             android:layout_height = "56dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft = "16dp"
             android:gravity = "center_vertical"
-            android:textSize="24dp"
-            android:id="@+id/class_title"/>
+            android:textSize = "24sp"
+            android:id = "@+id/class_title" />
+
         <View
             android:layout_width = "match_parent"
             android:layout_height = "1dp"
             android:layout_above = "@+id/assignments"
-            android:background = "@color/material_divider" />
+            android:background = "@color/material_divider"
+            android:backgroundTint = "@color/material_divider" />
+
         <TextView
-            android:id="@+id/assignments"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
+            android:id = "@+id/assignments"
+            android:layout_width = "wrap_content"
+            android:layout_height = "56dp"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
-            android:layout_below="@+id/class_title"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:text="@string/assignments"/>
+            android:layout_below = "@+id/class_title"
+            android:gravity = "center_vertical"
+            android:layout_marginLeft = "16dp"
+            android:text = "@string/assignments" />
+
         <TextView
-            android:id="@+id/assignment1"
-            android:layout_width="wrap_content"
-            android:layout_height="54dp"
+            android:id = "@+id/assignment1"
+            android:layout_width = "wrap_content"
+            android:layout_height = "54dp"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
-            android:layout_marginLeft="72dp"
-            android:textSize="14dp"
-            android:layout_below="@+id/assignments"
-            android:gravity="center_vertical"
-            android:text="@string/assignment1"/>
+            android:layout_marginLeft = "72dp"
+            android:textSize = "14dp"
+            android:layout_below = "@+id/assignments"
+            android:gravity = "center_vertical"
+            android:text = "@string/assignment1" />
+
         <TextView
-            android:id="@+id/assignment2"
-            android:layout_width="wrap_content"
-            android:layout_height="54dp"
+            android:id = "@+id/assignment2"
+            android:layout_width = "wrap_content"
+            android:layout_height = "54dp"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
-            android:layout_marginLeft="72dp"
-            android:textSize="14dp"
-            android:layout_below="@+id/assignment1"
-            android:gravity="center_vertical"
-            android:text="@string/assignment2"/>
+            android:layout_marginLeft = "72dp"
+            android:textSize = "14dp"
+            android:layout_below = "@+id/assignment1"
+            android:gravity = "center_vertical"
+            android:text = "@string/assignment2" />
+
         <TextView
-            android:id="@+id/assignment3"
-            android:layout_width="wrap_content"
-            android:layout_height="54dp"
+            android:id = "@+id/assignment3"
+            android:layout_width = "wrap_content"
+            android:layout_height = "54dp"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
-            android:layout_marginLeft="72dp"
-            android:textSize="14dp"
-            android:layout_below="@+id/assignment2"
-            android:gravity="center_vertical"
-            android:text="@string/assignment3"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/ic_assignment_black"
-            android:layout_below="@+id/assignments"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/ic_assignment_black"
-            android:layout_below="@+id/assignment1"/>
-        <View
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/ic_assignment_black"
-            android:layout_below="@+id/assignment2"/>
+            android:layout_marginLeft = "72dp"
+            android:textSize = "14dp"
+            android:layout_below = "@+id/assignment2"
+            android:gravity = "center_vertical"
+            android:text = "@string/assignment3" />
+
+        <ImageView
+            style = "@style/AppTheme.ClassesList.Class.Assignments.Icon"
+            android:layout_below = "@+id/assignments" />
+
+        <ImageView
+            style = "@style/AppTheme.ClassesList.Class.Assignments.Icon"
+            android:layout_below = "@+id/assignment1" />
+
+        <ImageView
+            style = "@style/AppTheme.ClassesList.Class.Assignments.Icon"
+            android:layout_below = "@+id/assignment2" />
+
         <View
             android:layout_width = "match_parent"
             android:layout_height = "1dp"
             android:layout_below = "@+id/assignment3"
-            android:background = "@color/material_divider" />
+            android:background = "@color/material_divider"
+            android:backgroundTint = "@color/material_divider" />
 
     </RelativeLayout>
 

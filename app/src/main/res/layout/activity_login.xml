@@ -1,11 +1,15 @@
 <LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
-    xmlns:tools = "http://schemas.android.com/tools"
-    android:layout_width = "match_parent" android:layout_height = "match_parent"
-    android:orientation = "vertical" tools:context = "com.omnia.applemaps119.LoginActivity">
+              xmlns:tools = "http://schemas.android.com/tools"
+              android:layout_width = "match_parent"
+              android:layout_height = "match_parent"
+              android:orientation = "vertical"
+              tools:context = "com.omnia.applemaps119.LoginActivity">
+
     <android.support.v7.widget.Toolbar
         android:id = "@+id/toolbar_login"
         style = "@style/AppTheme.Toolbar"
         android:title = "@string/title_activity_login" />
+
     <LinearLayout
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"

@@ -15,14 +15,14 @@
         android:layout_height = "match_parent">
 
         <CalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="1000dp"
-            android:id="@+id/calendarView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:showWeekNumber="false"/>
+            android:layout_width = "fill_parent"
+            android:layout_height = "fill_parent"
+            android:id = "@+id/calendarView"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true"
+            android:showWeekNumber = "false" />
 
     </RelativeLayout>
 </LinearLayout>

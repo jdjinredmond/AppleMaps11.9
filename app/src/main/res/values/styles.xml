@@ -27,6 +27,13 @@
         <item name = "android:paddingBottom">16dp</item>
     </style>-->
 
+    <style name = "AppTheme.Divider">
+        <item name = "android:layout_width">match_parent</item>
+        <item name = "android:layout_height">1dp</item>
+        <item name = "android:background">@color/material_divider</item>
+        <item name = "android:backgroundTint">@color/material_divider</item>
+    </style>
+
     <style name = "AppTheme.Button" parent = "TextAppearance.AppCompat.Button">
         <item name = "android:textAllCaps">true</item>
         <item name = "android:layout_height">36dp</item>
@@ -34,12 +41,30 @@
         <item name = "android:minWidth">88dp</item>
         <item name = "android:textSize">14sp</item>
     </style>
-    
-    <style name = "AppTheme.ClassesList.Item" parent="AppTheme">
+
+    <style name = "AppTheme.ClassesList.Item" parent = "AppTheme">
         <item name = "android:paddingLeft">16dp</item>
         <item name = "android:gravity">center_vertical</item>
         <item name = "android:textColor">@color/material_text_primary</item>
         <item name = "android:layout_height">48dp</item>
+    </style>
+
+    <style name = "AppTheme.Icon.Black.54" parent = "AppTheme">
+        <item name = "android:layout_width">24dp</item>
+        <item name = "android:layout_height">24dp</item>
+        <item name = "android:alpha">0.54</item>
+    </style>
+
+    <style name = "AppTheme.Icon.Black.54.Bookmark.Home" parent = "AppTheme.Icon.Black.54">
+        <item name = "android:layout_marginLeft">18dp</item>
+        <item name = "android:layout_marginTop">16dp</item>
+        <item name = "android:src">@drawable/ic_bookmark_black</item>
+    </style>
+
+    <style name = "AppTheme.ClassesList.Class.Assignments.Icon" parent = "AppTheme.Icon.Black.54">
+        <item name = "android:layout_marginLeft">24dp</item>
+        <item name = "android:layout_marginTop">16dp</item>
+        <item name = "android:src">@drawable/ic_assignment_black</item>
     </style>
 
     <style name = "AppTheme.NavigationDrawer.Item" parent = "AppTheme">
