@@ -34,15 +34,10 @@ public class HomeFragment extends ActionBarFragment
     private void setDate(View view)
     {
         Date nDate = new Date();
-        String formatDay = "MMMM, EEEE";
-        String formatDate = "d";
-        SimpleDateFormat ftDay = new SimpleDateFormat(formatDay);
-        SimpleDateFormat ftDate = new SimpleDateFormat(formatDate);
+        String format = "EEEE, MMMM dd";
+        SimpleDateFormat ftDay = new SimpleDateFormat(format);
         String day = ftDay.format(nDate);
-        String date = ftDate.format(nDate);
         TextView dayText = (TextView) view.findViewById(R.id.text_day);
-        TextView dateText = (TextView) view.findViewById(R.id.text_date);
         dayText.setText(day);
-        dateText.setText(date);
     }
 }
