@@ -31,7 +31,6 @@ public class HomeFragment extends ActionBarFragment
         setDate(view);
         return view;
     }
-
     private void setDate(View view)
     {
         Date nDate = new Date();

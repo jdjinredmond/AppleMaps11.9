@@ -45,7 +45,7 @@
         <TextView
             android:id = "@+id/text_announcements"
             android:layout_width = "match_parent"
-            android:layout_height = "48dp"
+            android:layout_height = "56dp"
             android:layout_alignParentLeft = "true"
             android:layout_alignParentStart = "true"
             android:layout_below = "@+id/text_date"
@@ -55,11 +55,47 @@
             android:textAlignment = "gravity"
             android:textSize = "16sp" />
 
+        <TextView
+            android:id="@+id/text_announcement1"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="72dp"
+            android:layout_below="@+id/text_announcements"
+            android:gravity="center_vertical"
+            android:text="@string/announcement1"
+            android:textSize="14dp"
+            android:layout_height="56dp" />
+        <TextView
+            android:id="@+id/text_announcement2"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="72dp"
+            android:layout_below="@+id/text_announcement1"
+            android:gravity="center_vertical"
+            android:text="@string/announcement2"
+            android:textSize="14dp"
+            android:layout_height="56dp" />
+
         <View
             android:layout_width = "match_parent"
             android:layout_height = "1dp"
-            android:layout_below = "@+id/text_announcements"
+            android:layout_below = "@+id/text_announcement2"
             android:background = "@color/material_divider" />
+        <View
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/ic_bookmark_black"
+            android:layout_below="@+id/text_announcements"/>
+        <View
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/ic_bookmark_black"
+            android:layout_below="@+id/text_announcement1"/>
+
 
     </RelativeLayout>
 </LinearLayout>

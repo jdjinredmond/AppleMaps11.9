@@ -30,7 +30,7 @@ public class ClassesFragment extends ActionBarFragment
         mViewSwitcher.setOutAnimation(getActivity().getApplicationContext(), android.support.v7.appcompat.R.anim.abc_slide_out_top);*/
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_classes);
         mToolbar.setTitle(mTitle);
-        classes = new String[]{"APUSH", "AP Calculus BC", "AP Chemistry", "Anatomy and Physiology", "Advanced Biomedical Lab", "World Literature"};
+        classes = new String[]{"AP US History", "AP Calculus BC", "AP Chemistry", "Anatomy and Physiology", "Advanced Biomedical Lab", "World Literature"};
         mListView = (ListView) view.findViewById(R.id.classes_list);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {

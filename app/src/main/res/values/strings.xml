@@ -8,6 +8,8 @@
     <string name = "welcome">Welcome Andrew Wang</string>
     <string name = "date">Wednesday, November 12</string>
     <string name = "announcements">Announcements</string>
+    <string name = "announcement1">AP US History test on the 11th and 12th</string>
+    <string name = "announcement2">AP Chemistry test on the 16th</string>
     <string name = "calendar">Calendar</string>
     <string name = "navigation_drawer_open">Open navigation drawer</string>
     <string name = "navigation_drawer_close">Close navigation drawer</string>
