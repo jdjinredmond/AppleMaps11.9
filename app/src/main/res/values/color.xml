@@ -34,8 +34,8 @@
 
     <color name = "material_divider">#e1e1e1</color>
 
-    <color name = "colorPrimary">@color/material_indigo_500</color>
-    <color name = "colorPrimaryDark">@color/material_indigo_700</color>
+    <color name = "colorPrimary">@color/material_teal_500</color>
+    <color name = "colorPrimaryDark">@color/material_teal_700</color>
     <color name = "colorAccent">@color/material_light_green_A200</color>
     <color name = "colorAccentDark">@color/material_light_green_A400</color>
     <color name = "colorAccentDarker">@color/material_light_green_A700</color>

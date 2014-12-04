@@ -80,7 +80,9 @@
         <item name = "android:layout_marginTop">12dp</item>
         <item name = "android:layout_marginBottom">12dp</item>
         <item name = "android:layout_marginLeft">16dp</item>
-        <item name = "android:src">@drawable/navigation_drawer_item_icon_home</item>
+        <item name = "android:src">@drawable/ic_home</item>
+        <item name = "android:tint">@color/navigation_drawer_item_icon_color</item>
+        <!--<item name = "android:tintMode">src_in</item>-->
         <item name = "android:background">@color/transparent</item>
     </style>
 
