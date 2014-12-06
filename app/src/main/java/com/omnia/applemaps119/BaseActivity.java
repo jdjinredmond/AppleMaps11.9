@@ -66,6 +66,10 @@ public class BaseActivity extends ActionBarActivity
                 mToolbarId = R.id.toolbar_classes;
                 break;
             case 3:
+                mFragment = new ServerTestFragment();
+                mToolbarId = R.id.toolbar_server_test;
+                break;
+            case 4:
                 PreferenceManager.getDefaultSharedPreferences(
                         getApplicationContext()).edit().putBoolean(STATE_LOGGED_IN, false).apply();
                 startActivity(new Intent(this, LoginActivity.class));
