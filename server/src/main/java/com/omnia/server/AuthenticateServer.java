@@ -28,6 +28,7 @@ public class AuthenticateServer
             while (listening)
             {
                 new AuthenticateServerThread(sslServerSocket.accept()).start();
+                System.out.println("yeeee");
             }
         }
         catch (IOException e)
