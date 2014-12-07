@@ -1,4 +1,4 @@
-package com.omnia.server;
+//package com.omnia.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
