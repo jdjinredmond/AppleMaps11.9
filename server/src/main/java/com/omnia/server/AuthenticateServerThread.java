@@ -24,7 +24,7 @@ public class AuthenticateServerThread extends Thread
             String inputLine, outputLine;
             outputLine = "connected";
             out.println(outputLine);
-            socket.close();
+            //socket.close();
         }
         catch (IOException e)
         {
