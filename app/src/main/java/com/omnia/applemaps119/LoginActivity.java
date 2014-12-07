@@ -28,8 +28,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocketFactory;
 
 
 /**
@@ -318,14 +327,27 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>
 
             try
             {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e)
+                SocketFactory socketFactory = SSLSocketFactory.getDefault();
+                Socket socket = socketFactory.createSocket("omnia69.asuscomm.com", 443);
+
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                if (in.readLine() == "connected")
+                    return true;
+            }
+            catch (UnknownHostException e)
             {
                 return false;
             }
+            catch (IOException e)
+            {
+                return false;
+            }
+            /*catch (InterruptedException e)
+            {
+                return false;
+            }*/
 
-            for (String credential : DUMMY_CREDENTIALS)
+            /*for (String credential : DUMMY_CREDENTIALS)
             {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail))
@@ -333,10 +355,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
-            }
+            }*/
 
             // TODO: register the new account here.
-            return true;
+            return false;
         }
 
         @Override

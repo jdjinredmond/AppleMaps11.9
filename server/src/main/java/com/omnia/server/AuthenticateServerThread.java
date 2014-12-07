@@ -22,6 +22,9 @@ public class AuthenticateServerThread extends Thread
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())))
         {
             String inputLine, outputLine;
+            outputLine = "connected";
+            out.println(outputLine);
+            socket.close();
         }
         catch (IOException e)
         {
