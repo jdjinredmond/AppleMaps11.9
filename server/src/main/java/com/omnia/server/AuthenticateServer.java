@@ -5,6 +5,7 @@ import sun.security.ssl.SSLServerSocketFactoryImpl;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
@@ -29,7 +30,7 @@ public class AuthenticateServer
             while (listening)
             {
                 new AuthenticateServerThread(sslServerSocket.accept()).start();
-                System.out.println("yeeee\t" + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")));
+                System.out.println("yeeee\t" + (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(new Date()));
             }
         }
         catch (IOException e)
