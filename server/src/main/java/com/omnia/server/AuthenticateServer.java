@@ -21,9 +21,10 @@ public class AuthenticateServer
         int portNumber = Integer.parseInt(args[0]);
         boolean listening = true;
 
-        try (SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactoryImpl.getDefault();
-             SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber))
+        try
         {
+            SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactoryImpl.getDefault();
+            SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber);
             while (listening)
             {
                 new AuthenticateServerThread(sslServerSocket.accept()).start();
