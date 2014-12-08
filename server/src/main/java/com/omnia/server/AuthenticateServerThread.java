@@ -21,6 +21,7 @@ public class AuthenticateServerThread extends Thread
         try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())))
         {
+            System.out.println("yeeeee");
             String inputLine, outputLine;
             outputLine = "connected";
             out.println(outputLine);
