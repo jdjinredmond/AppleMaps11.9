@@ -32,6 +32,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -330,6 +331,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>
                 SocketFactory socketFactory = SSLSocketFactory.getDefault();
                 Socket socket = socketFactory.createSocket("omnia69.asuscomm.com", 443);
 
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                out.println("yeeee");
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 if (in.readLine() == "connected")
                     return true;
