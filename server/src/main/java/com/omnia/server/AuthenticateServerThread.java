@@ -23,7 +23,7 @@ public class AuthenticateServerThread extends Thread
         {
             String inputLine, outputLine;
             outputLine = "connected";
-            //System.err.println(in.readLine());
+            System.err.println(in.readLine());
             out.println(outputLine);
             socket.close();
         }
