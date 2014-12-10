@@ -28,7 +28,11 @@ public class AuthenticateServer
         {
             SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactoryImpl.getDefault();
             SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber);
-            System.out.println(sslServerSocket.getEnabledCipherSuites());
+            for (String cipher : sslServerSocket.getEnabledCipherSuites())
+            {
+                System.out.print(cipher + "    ");
+            }
+            System.out.println();
             while (listening)
             {
                 new AuthenticateServerThread(sslServerSocket.accept()).start();
