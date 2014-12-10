@@ -18,6 +18,7 @@ import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
 
@@ -328,12 +330,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>
 
             try
             {
-                SocketFactory socketFactory = SSLSocketFactory.getDefault();
-                Socket socket = socketFactory.createSocket("omnia69.asuscomm.com", 443);
+                SSLSocketFactory sslSocketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+                SSLSocket sslSocket = (SSLSocket) sslSocketFactory.createSocket("omnia69.asuscomm.com", 443);
+                for (String cipher : sslSocket.getEnabledCipherSuites())
+                {
+                    Log.i("AppleMaps", cipher);
+                }
 
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                PrintWriter out = new PrintWriter(sslSocket.getOutputStream(), true);
                 out.println("yeeee");
-                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                BufferedReader in = new BufferedReader(new InputStreamReader(sslSocket.getInputStream()));
                 if (in.readLine() == "connected")
                     return true;
             }
