@@ -3,6 +3,7 @@
 import sun.security.ssl.SSLServerSocketFactoryImpl;
 
 import java.io.IOException;
+import java.lang.System;
 import java.net.ServerSocket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +28,7 @@ public class AuthenticateServer
         {
             SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactoryImpl.getDefault();
             SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber);
+            System.out.println(sslServerSocket.getEnabledCipherSuites());
             while (listening)
             {
                 new AuthenticateServerThread(sslServerSocket.accept()).start();
